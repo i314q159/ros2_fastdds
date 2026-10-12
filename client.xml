@@ -5,7 +5,6 @@
         <ip_address>192.168.10.2</ip_address>
         <netmask_filter>ON</netmask_filter>
     </transport_descriptor>
-
     <participant profile_name="i314q159" is_default_profile="true">
         <rtps>
             <transports>
@@ -16,6 +15,7 @@
             <builtin>
                 <discovery_config>
                     <discoveryProtocol>SERVER</discoveryProtocol>
+                    <superClient>true</superClient>
                     <discoveryServersList>
                         <server>
                             <address>192.168.10.1</address>
