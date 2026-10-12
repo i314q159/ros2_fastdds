@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
-    <transport_descriptor>
+    <transport_descriptor transport_id="UDPv4">
         <type>UDPv4</type>
-        <interface_whitelist>
-            <interface>192.168.10.2</interface>
-        </interface_whitelist>
+        <ip_address>192.168.10.2</ip_address>
         <netmask_filter>ON</netmask_filter>
     </transport_descriptor>
 
-    <participant profile_name="ds_client" is_default_profile="true">
+    <participant profile_name="i314q159" is_default_profile="true">
         <rtps>
             <transports>
                 <transport_id>
                     <transport_descriptor_ref>UDPv4</transport_descriptor_ref>
                 </transport_id>
             </transports>
-            <discovery>
-                <server>
-                    <metatrafficUnicastLocatorList>
-                        <locator>
-                            <udpv4>
-                                <address>192.168.10.1</address>
-                                <port>11811</port>
-                            </udpv4>
-                        </locator>
-                    </metatrafficUnicastLocatorList>
-                </server>
-            </discovery>
+            <builtin>
+                <discovery_config>
+                    <discoveryProtocol>SERVER</discoveryProtocol>
+                    <discoveryServersList>
+                        <server>
+                            <address>192.168.10.1</address>
+                            <port>11811</port>
+                            <serverId>0</serverId>
+                        </server>
+                    </discoveryServersList>
+                </discovery_config>
+            </builtin>
         </rtps>
     </participant>
 </profiles>
